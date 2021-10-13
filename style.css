@@ -1,0 +1,92 @@
+body {background-color:magenta;
+    background-image: url("https://www.pandasecurity.com/en/mediacenter/src/uploads/2020/08/covid-19-cybersecurity-statistics-hero.jpg");
+    background-position: center;
+background-size:fill;
+}
+.opener{
+    display: block; 
+    width:40%;
+text-align: center; 
+margin: 15% auto;
+background-color: #ffffff;; 
+    padding:20px;
+    border-radius: 30px;
+}
+#gamejoint {
+    display:none; 
+    width:60%; 
+    margin: 15% auto;
+    
+}
+.gamer{
+    background-color: red; 
+    padding:20px;
+    border-radius: 30px;
+} 
+.gameblue{
+    background-color: royalblue;  
+    padding:20px;
+    border-radius: 30px;
+}
+.endgamecon{display: none;
+    background-color: #000000; 
+    padding:20px;
+    border-radius: 30px;
+    width:30%;
+    margin: 15% auto;
+    text-align: center;}
+.endgamered{display: none;
+    background-color: red; 
+    padding:20px;
+    border-radius: 30px;
+    width:30%;
+    margin: 15% auto;
+    text-align: center;
+}
+.endgameblue{display: none;
+    background-color: royalblue;  
+    padding:20px;
+    border-radius: 30px;
+    width:30%;
+    margin: 15% auto;
+    text-align: center;
+}
+/* courtesy https://www.codegrepper.com/code-examples/css/outer+glow+css */
+.activated{box-shadow: 120px 80px 40px 20px rgb(255, 230, 0);}
+.playerzwrap{display:flex;
+justify-content: center;
+}
+.redside{width:150px;
+    height: 150px;
+    color:#ffffff;
+/* background-color: #000000; */
+overflow:hidden;
+}
+.blueside{width:150px;
+    height: 150px;
+    color:#ffffff;
+    /* background-color: #000000; */
+    overflow:hidden;
+}
+#redpic{width: inherit; 
+    vertical-align: text-top;
+    
+/* border:4px solid yellow; */
+}
+
+#bluepic{width:inherit;
+    height:inherit;
+    /* courtesy https://www.w3schools.com/howto/howto_css_flip_image.asp */
+    transform: scaleX(-1);
+    vertical-align: text-top;
+    /* border:4px solid yellow; */
+}
+#playedit1{z-index: 5;}
+h3 {margin:0px;}
+.trumped{
+    position:relative; 
+    margin:auto;
+overflow: hidden;
+width:90%;
+}
+.trumped img{width:inherit;}

@@ -5,10 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="./style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous" defer></script>
     <script src="./app.js" defer></script>
 </head>
 <body>
-    <h1>LIVE</h1>
+    <div class="wrapthegame">
+    <div class="opener">
+    <h1 class="title">War Games</h1>
+    <p> The world is on the brink of war! Only your correct answers will stop it. <b>Which President is responsible for what?</b>Five wrong answers and your opponent wins. Answer before Defcon explodes!</p>
+    <button class="open_btn" >Click Here To Play</button>
+</div>
+
+<div id="gamejoint" class="gamer" name="switcher"><center>
+    <div class="defcon"></div>
+    <h1 class="questionme">Ready?</h1>
+    <h2 class="playerprompt">Players Ready?</h2>
+    <form class="allofme" id="allputted">
+    <input type="text" id="uinput" name="inputted" class="answerme" >
+    <input type="submit" id="doneputted" value="Which President did this?">
+</form>
+<div class="playerzwrap">
+    <div class="redside"><h3 id="playedit1">No Failures</h3><img id="redpic"src="img\trump.png" /> </div>
+    <div class="blueside"><h3 id="playedit2">No Failures</h3><img id="bluepic" src="img\barackobama.png" /> </div></div></center>
+</div>
+
+<div class="endgamecon">
+    <h1 class="confin">The World is Destroyed!!!</h1>
+    <div class="trumped"><img src="https://static.wixstatic.com/media/d75784_7ca733b34d8945e5b08424c80d61768c~mv2.gif" /> </div>
+</div>
+
+<div class="endgamered">
+    <h1 class="redfin">Trump Is Your President!</h1>
+    <div class="trumped"><img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg" /> </div>
+</div>
+
+<div class="endgameblue">
+    <h1 class="redfin">Obama saves the day!</h1>
+    <div class="trumped"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/220px-President_Barack_Obama.jpg" /> </div>
+</div>
+</div>
 </body>
 </html>
