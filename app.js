@@ -135,7 +135,7 @@ const solveEngine = (param) => {
 // console.log(param[counter].answer)
         if( $('#uinput').val() !=  param[counter].answer && myTurn == true){player1 ++;
             
-                   $('#playedit1').text(player1)   
+                   $('#playedit1').text(player1 + " failures")   
                    console.log('redhit')
                 //    redfirst = redfirst - 20 ;
                 //    $('.redside').width( redfirst )
@@ -151,7 +151,7 @@ const solveEngine = (param) => {
     }
      else if ( $('#uinput').val() !=  param[counter].answer && myTurn == false){player2 ++;
         
-        $('#playedit2').text(player2)
+        $('#playedit2').text(player2 + " failures")
         console.log('bluehit')
         // bluefirst = bluefirst -20 ;
         // $('.blueside').width( bluefirst ) 

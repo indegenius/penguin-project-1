@@ -141,4 +141,12 @@ margin: 10px auto;
     font-size: inherit;
 }
 .redfin {font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
-#uinput, #doneputted {width:80%; font-weight:900; font-size: .5em;}
+#uinput, #doneputted {
+    position:relative; 
+    width:85%; 
+    font-weight:900; 
+    /* courtesy https://www.codegrepper.com/code-examples/css/html+input+button+font+size+responsive */
+    font-size: calc( 11px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+    text-align: center; 
+    word-wrap: normal;
+}
