@@ -20,7 +20,7 @@ background-color: #ffffff;;
     font-size: 2em;
 background-color: red;
 color: lavenderblush;
-width: 15em;
+width: 70%;
 box-shadow: 0px 0px 20px 10px #ccffff;
 }
 #gamejoint {
@@ -74,33 +74,37 @@ box-shadow: 0px 0px 20px 10px #ccffff;
 }
 
     .playerzwrap{display:flex;
-justify-content: center;
+justify-content: space-evenly;
 }
 .redside{width:150px;
-    height: 10em;
+    height: 150px;
     color:#ffffff;
 /* background-color: #000000; */
 overflow:hidden;
 margin-right: 50px;
 }
 .blueside{width:150px;
-    height: 10em;
+    height: 150px;
     color:#ffffff;
     /* background-color: #000000; */
     overflow:hidden;
     margin-left: 50px;
 }
 #redpic{
-    margin:0px;
+    margin:0px auto;
     position:relative;
-    width:150px; 
+    width:100%; 
+    height:70%;
     vertical-align:middle;
     
 /* border:4px solid yellow; */
 }
 
-#bluepic{width:150px; 
-    height:inherit;
+#bluepic{
+    margin:0px auto;
+    position:relative;
+    width:100%; 
+    height:80%;
     /* courtesy https://www.w3schools.com/howto/howto_css_flip_image.asp */
     transform: scaleX(-1);
     vertical-align:middle;

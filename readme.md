@@ -23,3 +23,6 @@ It's working and changing through all modals but not smoothly.
 Felling great because it all works. Just have to find the bugs...
 
 Spent all dy chasing the bug until Jackson Reeves helped me take the program apart in Office Hours
+
+## DAy 3
+Finishd and added Audio but cut the animation of the images as the effect was not good looking

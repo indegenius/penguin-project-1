@@ -140,12 +140,12 @@ const solveEngine = (param) => {
                 //    redfirst = redfirst - 20 ;
                 //    $('.redside').width( redfirst )
                 // courtesy http://jsfiddle.net/jakecigar/3aaxs/
-                $('.redside').animate({
-                    width: "-=20",
-                    height: "-=20",
-                    top: "+=0",
-                    left: "+=0"
-                }, 300);
+                // $('#redpic').animate({
+                //     width: "-=20",
+                //     height: "-=20",
+                //     top: "+=20",
+                //     left: "+=20"
+                // }, 300);
                    playNo()
                    advanceCounter(param);         
     }
@@ -155,12 +155,12 @@ const solveEngine = (param) => {
         console.log('bluehit')
         // bluefirst = bluefirst -20 ;
         // $('.blueside').width( bluefirst ) 
-        $('.blueside').animate({
-            width: "-=20",
-            height: "-=20",
-            top: "+=0",
-            left: "+=0"
-        }, 300);
+        // $('#bluepic').animate({
+        //     width: "-=20",
+        //     height: "-=20",
+        //     top: "+=20",
+        //     left: "+=20"
+        // }, 300);
         playNo()
         advanceCounter(param);
     }
