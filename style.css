@@ -2,6 +2,7 @@ body {background-color:magenta;
     background-image: url("https://www.pandasecurity.com/en/mediacenter/src/uploads/2020/08/covid-19-cybersecurity-statistics-hero.jpg");
     background-position: center;
 background-size:fill;
+background-repeat: no-repeat;
 font-style:oblique;
 font-size:11pt;
 }
@@ -27,7 +28,7 @@ box-shadow: 0px 0px 20px 10px #ccffff;
 #gamejoint {
     display:none; 
     width:60%; 
-    margin: 15% auto;
+    margin: 5% auto;
     font-size:1.5em
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
