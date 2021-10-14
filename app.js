@@ -1,23 +1,3 @@
-// will be a two player game
-//player red is always Trump pic
-//player Blue is always Obama pic
-//want a load screen with rules and "start Play button"
-//click "start play button" plays "shall we play a game"
-// 3 sec transition of main game on stage
-// question 22 ,answer 2, audio 2 in database json
-// first to five failures looses
-// question displays; audio "dun dun da" plays; waits for response
-// reads first letter of response
-// reveals answer; audio of "the answer is :name: " plays;
-// each answer raises "def con" (loadbar 'answer array.length')
-//when defcon is red (22questions asked) ganme ends
-//wrong answer = "failure holder++"
-// each wrong answer REDUCES image by 10% (loadbar:  presPicRed.width minus (failure holder * 20 +'%'))
-// "failures" displays on screen
-// if defcon==22 or if Redfailures == 5  or if Bluefailures == 5 load 'end game' modal
-
-// questions courtesy https://ramonahouston.com/blog/the-244-accomplishments-of-president-barak-obama/    ,    https://lc.org/PDFs/Trump.Accomplishments.FINAL.pdf
-
 // ajax
 const URL ="https://cdn.contentful.com/spaces/oy2q0xrv1vwu/environments/master/entries?access_token=pYlGR49Ybd_hPAFp_hGqUTUtm0tdGPoeAIg0gvuTo0w&content_type=triviaq"
 
@@ -30,12 +10,24 @@ let player1 = 0;
 let player2 = 0;
 let counter = 0;
 let fetched = []
+let redfirst = $('.redside').width()
+let bluefirst = $('.blueside').width()
+
+
+
 const getReady = (param) =>{ $('.open_btn').on('click' , ()=>{
-    console.log(param);
+    // console.log(param);
     $('.opener').toggle( "slow", ()=> {})
     $('#gamejoint').toggle( "slow", ()=> {})
-    bigEngine(param)
-})}
+    // bigEngine(param)
+    $('.questionme').text(param[counter].question)
+    $('.playerprompt').text('Player1 Please Answer, ')
+    $("#redpic").attr('class', 'activated')
+    inputter(param)
+})
+
+}
+
 $.ajax(URL)
 .then((data)=>{
     fetched = data.items.map((q) => q.fields)
@@ -43,83 +35,113 @@ $.ajax(URL)
     getReady(fetched)
 })
 
+const inputter =  (param) => {$('#allputted').on('submit' , (e)=>{
+        // console.log('touched')
+        e.preventDefault()
+        solveEngine(param)    
+    })
+    ;}
 
+const turnBlue=(param)=>{
+    // console.log('blueturn')
+    $("#redpic").attr('class', '')
+$('#gamejoint').attr('class', 'gameblue');
 
+// console.log($('.playerprompt').text())
 
-const bigEngine =(param) => { 
-    
-    
-    $('.questionme').text('')
-   $('.playerprompt').text('') 
-$('.questionme').text(param[counter].question)
-
-if (myTurn == false){
-    console.log('blueturn')
-    $('#gamejoint').attr('class', 'gameblue');
-    $('.playerprompt').text('Player2 Please Answer, ')
-    $("#bluepic").attr("class", "activated")
-
-} 
-else if(myTurn == true){ 
-    console.log('redturn')
-     $('#gamejoint').attr('class', 'gamer');
-    $('.playerprompt').text('Player1 Please Answer, ')
-    $("#redpic").attr("class", "activated")
+$("#bluepic").attr('class', 'activated');
 }
-$('#allputted').on('submit' , (e)=>{
-    console.log('touched')
-    e.preventDefault()
-    
-    solveEngine(param) 
-    
-})
-} //endbigEngine
 
-const donewit =() =>{; }
+const turnRed = (param) => {
+    // console.log('redturn')
+    $("#bluepic").attr('class', '');
+     $('#gamejoint').attr('class', 'gamer');
+    
+    $("#redpic").attr('class', 'activated')}
+
+
+    const questoiner = (param ) => {
+$('.questionme').text('')
+$('.playerprompt').text('') 
+$('.questionme').text(param[counter].question)
+if (myTurn){
+    
+    // console.log(redfirst + ' redvalue')
+    $('.playerprompt').text('Player1 Please Answer, ')
+
+// console.log($('.redside').width() + "Redwidth")
+}
+else { 
+    
+    // console.log(bluefirst + ' blueValue')
+    $('.playerprompt').text('Player2 Please Answer, ')
+    
+    // console.log($('.blueside').width() + "Bluewidth")
+}
+
+}
+
+
 
 const advanceCounter =(param) => { counter++;
     myTurn = !myTurn;
     endgameCheck(param)    
+    
+    // bigEngine(param)
+    console.log(myTurn + " myturn Value")
+    if (myTurn){turnRed(param)
+}
+else {
+    turnBlue(param)
+}
+questoiner(param)
+$('.defcon').width( fetched.length * counter )
 }
 
 
 const endgameCheck =(param) => {console.log(myTurn);
-if(player1 >= 5 ){$('#gamejoint').toggle( "slow", ()=> {})
+if(player2 >= 5 ){$('#gamejoint').toggle( "slow", ()=> {})
 $('.endgamered').toggle( "slow", ()=> {})}
-else if(player2 >= 5 ){$('#gamejoint').toggle( "slow", ()=> {})
+else if(player1 >= 5 ){$('#gamejoint').toggle( "slow", ()=> {})
 $('.endgameblue').toggle( "slow", ()=> {})}
     else if (counter>= fetched.length){$('#gamejoint').toggle( "slow", ()=> {})
     $('.endgamecon').toggle( "slow", ()=> {})}
-    else{console.log('going big');
-    bigEngine(param)}
+    
 
 }
 
 const solveEngine = (param) => {
-// console.log('solving')
+    // donewit(param)  
+console.log('solving')
 // console.log(player1)
-let redfirst = $('.redside').width()
-let bluefirst = $('.blueside').width()
-redfirst = redfirst - 20
-bluefirst = bluefirst -20;
 
 
-    if ($('#uinput').val() !=  param[counter].answer){
+
+    
         console.log($('#uinput').val())
         console.log(param[counter].answer)
-        if(myTurn == true){player1 ++;
-               $('.redside').attr('width', redfirst )
-               console.log(redfirst) 
-                   $('#playedit1').text(player1)            
+        if( $('#uinput').val() !=  param[counter].answer && myTurn == true){player1 ++;
+            
+                   $('#playedit1').text(player1)   
+                   console.log('redhit')
+                   redfirst = redfirst - 20 ;
+                   $('.redside').width( redfirst )
+                   advanceCounter(param);         
     }
-     else if (myTurn == false){player2 ++;
-        $('.blueside').attr('width', bluefirst ) 
+     else if ( $('#uinput').val() !=  param[counter].answer && myTurn == false){player2 ++;
+        
         $('#playedit2').text(player2)
+        console.log('bluehit')
+        bluefirst = bluefirst -20 ;
+        $('.blueside').width( bluefirst ) 
+        advanceCounter(param);
     }
-    
-}
-//   console.log(counter)  
-advanceCounter(param)
+    else{
+        console.log('nodhit')
+        advanceCounter(param);
+    }
 
-    ;}
-    
+//   console.log(counter)  
+
+
+    }  

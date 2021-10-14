@@ -20,4 +20,6 @@ Then I came home and grinded until 4am day 1
 ## Partially Working
 On the Morning of Day 2
 It's working and changing through all modals but not smoothly.
-Felling great because it all works. Judt have to find the bugs...
+Felling great because it all works. Just have to find the bugs...
+
+Spent all dy chasing the bug until Jackson Reeves helped me take the program apart in Office Hours
