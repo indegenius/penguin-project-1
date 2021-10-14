@@ -3,6 +3,7 @@ body {background-color:magenta;
     background-position: center;
 background-size:fill;
 font-style:oblique;
+font-size:11pt;
 }
 .opener{
     font-family: sans-serif;
@@ -17,7 +18,7 @@ background-color: #ffffff;;
     text-justify:inter-word;
 }
 .open_btn{
-    font-size: 2em;
+    font-size: 1.3em;
 background-color: red;
 color: lavenderblush;
 width: 70%;
@@ -27,17 +28,20 @@ box-shadow: 0px 0px 20px 10px #ccffff;
     display:none; 
     width:60%; 
     margin: 15% auto;
+    font-size:1.5em
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .gamer{
     background-color: red; 
     padding:20px;
     border-radius: 30px;
+    text-align: center;
 } 
 .gameblue{
     background-color: royalblue;  
     padding:20px;
     border-radius: 30px;
+    text-align: center;
 }
 .endgamecon{display: none;
     background-color: #000000; 
@@ -67,28 +71,32 @@ box-shadow: 0px 0px 20px 10px #ccffff;
     margin:0px;
     position:relative;
     vertical-align:middle;
-    width:150px;
+    /* width:150px; */
     /* height:inherit; */
     /* border:3px solid yellow; */
     box-shadow: 0px 0px 20px 10px rgb(255, 230, 0);
 }
 
     .playerzwrap{display:flex;
-justify-content: space-evenly;
+justify-content: center;
+width:100%;
+height:fit-content;
 }
-.redside{width:150px;
-    height: 150px;
+ .redside{width:100%;
+    /* height: 50%; */
     color:#ffffff;
 /* background-color: #000000; */
 overflow:hidden;
-margin-right: 50px;
+/* margin-right: 50px; */
+
 }
-.blueside{width:150px;
-    height: 150px;
+ .blueside{width:100%;
+    /* height: 50%; */
     color:#ffffff;
     /* background-color: #000000; */
     overflow:hidden;
-    margin-left: 50px;
+    /* margin-left: 50px; */
+   
 }
 #redpic{
     margin:0px auto;
@@ -112,11 +120,13 @@ margin-right: 50px;
 }
 #playedit1{z-index: 5;}
 h3 {margin:0px;}
-.trumped{
+.trumped{padding:10px;
     position:relative; 
     margin:auto;
 overflow: hidden;
 width:90%;
+font-size:1.5em;
+text-align: center;
 }
 .trumped img{width:inherit;}
 
@@ -125,8 +135,10 @@ width:90%;
     height:29px;
     background-image: linear-gradient(52deg, #eed709, #b11515); 
 overflow: hidden;
+margin: 10px auto;
 }
 .defcon h1{margin:0px;
     font-size: inherit;
 }
 .redfin {font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+#uinput, #doneputted {width:80%; font-weight:900; font-size: .5em;}
