@@ -27,7 +27,7 @@ const getReady = (param) =>{
     // console.log(param);
         $('.opener').toggle( "slow", ()=> {})
         $('#gamejoint').toggle( "slow", ()=> {})
-        $('#uinput').val('')
+        // $('#uinput').val('')
         $('.questionme').text(param[counter].question)
         $('.playerprompt').text('Player1 Please Answer, ')
         $("#redpic").attr('class', 'activated')
