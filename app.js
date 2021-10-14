@@ -13,17 +13,26 @@ let fetched = []
 let redfirst = $('.redside').width()
 let bluefirst = $('.blueside').width()
 
+const playAudio = ()=>{
+    $('.wrapthegame').append('<audio>'); 
+    
+    $('.wrapthegame audio').attr('src', './img/Shall-we-play-a-game.mp3');
+ console.log($('.wrapthegame audio')[0] )
+    
+    $('.wrapthegame audio')[0].play()
+}
 
-
-const getReady = (param) =>{ $('.open_btn').on('click' , ()=>{
+const getReady = (param) =>{ 
+    $('.open_btn').on('click' , ()=>{
     // console.log(param);
-    $('.opener').toggle( "slow", ()=> {})
-    $('#gamejoint').toggle( "slow", ()=> {})
+        $('.opener').toggle( "slow", ()=> {})
+        $('#gamejoint').toggle( "slow", ()=> {})
     // bigEngine(param)
-    $('.questionme').text(param[counter].question)
-    $('.playerprompt').text('Player1 Please Answer, ')
-    $("#redpic").attr('class', 'activated')
-    inputter(param)
+        $('.questionme').text(param[counter].question)
+        $('.playerprompt').text('Player1 Please Answer, ')
+        $("#redpic").attr('class', 'activated')
+        inputter(param)
+        playAudio()
 })
 
 }
@@ -110,30 +119,49 @@ $('.endgameblue').toggle( "slow", ()=> {})}
 
 }
 
+
+
+const playNo = ()=>{
+     $('.wrapthegame audio').attr('src', './img/no.mp3');
+ console.log($('.wrapthegame audio')[0] )
+    
+    $('.wrapthegame audio')[0].play()
+}
+
 const solveEngine = (param) => {
     // donewit(param)  
-console.log('solving')
-// console.log(player1)
-
-
-
-    
-        console.log($('#uinput').val())
-        console.log(param[counter].answer)
+// console.log('solving')
+//  console.log($('#uinput').val())
+// console.log(param[counter].answer)
         if( $('#uinput').val() !=  param[counter].answer && myTurn == true){player1 ++;
             
                    $('#playedit1').text(player1)   
                    console.log('redhit')
-                   redfirst = redfirst - 20 ;
-                   $('.redside').width( redfirst )
+                //    redfirst = redfirst - 20 ;
+                //    $('.redside').width( redfirst )
+                // courtesy http://jsfiddle.net/jakecigar/3aaxs/
+                $('.redside').animate({
+                    width: "-=20",
+                    height: "-=20",
+                    top: "+=0",
+                    left: "+=0"
+                }, 300);
+                   playNo()
                    advanceCounter(param);         
     }
      else if ( $('#uinput').val() !=  param[counter].answer && myTurn == false){player2 ++;
         
         $('#playedit2').text(player2)
         console.log('bluehit')
-        bluefirst = bluefirst -20 ;
-        $('.blueside').width( bluefirst ) 
+        // bluefirst = bluefirst -20 ;
+        // $('.blueside').width( bluefirst ) 
+        $('.blueside').animate({
+            width: "-=20",
+            height: "-=20",
+            top: "+=0",
+            left: "+=0"
+        }, 300);
+        playNo()
         advanceCounter(param);
     }
     else{
